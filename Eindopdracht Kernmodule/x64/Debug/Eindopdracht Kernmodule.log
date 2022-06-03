@@ -1,0 +1,4 @@
+﻿  Eindopdracht Kernmodule.cpp
+C:\Users\Stephan\Documents\HKU\KernModule\Eindopdracht Kernmodule\ScoreManager.h(18,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+C:\Users\Stephan\Documents\HKU\KernModule\Eindopdracht Kernmodule\CollisionManager.h(17,2): warning C4091: 'static ': ignored on left of 'CollisionManager' when no variable is declared
+  Eindopdracht Kernmodule.vcxproj -> C:\Users\Stephan\Documents\HKU\KernModule\Eindopdracht Kernmodule\x64\Debug\Eindopdracht Kernmodule.exe
