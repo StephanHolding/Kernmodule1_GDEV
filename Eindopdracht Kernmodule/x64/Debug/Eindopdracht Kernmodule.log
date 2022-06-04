@@ -1,21 +1,28 @@
-﻿  NPC.cpp
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\ScoreManager.h(18,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\NPC.cpp(32,65): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\NPC.cpp(32,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-  Object.cpp
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Object.cpp(18,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Object.cpp(18,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Object.cpp(42,99): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Object.cpp(42,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  RectangleCollider.cpp
+﻿  Eindopdracht Kernmodule.cpp
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\ScoreManager.h(20,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
 C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\CollisionManager.h(18,2): warning C4091: 'static ': ignored on left of 'CollisionManager' when no variable is declared
+  Player.cpp
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\EndScreen.h(14,2): warning C4091: 'static ': ignored on left of 'EndScreen' when no variable is declared
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Player.cpp(13,65): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Player.cpp(13,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  Scene.cpp
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Scene.cpp(70,67): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Scene.cpp(70,43): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
   Generating Code...
   Eindopdracht Kernmodule.vcxproj -> C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\x64\Debug\Eindopdracht Kernmodule.exe

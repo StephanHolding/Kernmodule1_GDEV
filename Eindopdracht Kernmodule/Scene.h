@@ -27,7 +27,7 @@ public:
 	}
 
 	static void DestroyObject(Object* toDestroy);
-
+	static void DestroyAllObjects();
 
 	void RenderAllObjects();
 	void CallUpdates();

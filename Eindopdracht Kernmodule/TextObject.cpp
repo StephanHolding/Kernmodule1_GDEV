@@ -20,9 +20,20 @@ void TextObject::Update(float deltaTime)
 void TextObject::SetText(const std::string& message)
 {
 	text.setString(message);
+	SetPivotToMiddle();
+}
+
+void TextObject::SetTextSize(int size)
+{
+	text.setCharacterSize(size);
 }
 
 void TextObject::UpdateTextPosition()
 {
 	text.setPosition(position.x, position.y);
+}
+
+void TextObject::SetPivotToMiddle()
+{
+	text.setOrigin(CustomVector2(text.getLocalBounds().width / 2, text.getLocalBounds().height / 2));
 }

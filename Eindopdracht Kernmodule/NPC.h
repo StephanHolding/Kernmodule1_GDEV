@@ -16,7 +16,7 @@ protected:
 	virtual void SpriteWasLoaded() override;
 	
 private:
-	float movementSpeed = 1000;
+	float movementSpeed = 1250;
 
 	RectangleCollider collider = RectangleCollider(this, Rect(position.x, position.y, 0, 0));
 

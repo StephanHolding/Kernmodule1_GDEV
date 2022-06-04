@@ -15,8 +15,11 @@ void CollisionManager::CheckCollision()
 			{
 				if (allColliders.at(i)->HasCollision(*allColliders.at(j)))
 				{
-					allColliders.at(i)->SendCollisionMessage(*allColliders.at(j));
-					allColliders.at(j)->SendCollisionMessage(*allColliders.at(i));
+					if (i < allColliders.size() && j < allColliders.size())
+						allColliders.at(i)->SendCollisionMessage(*allColliders.at(j));
+
+					if (i < allColliders.size() && j < allColliders.size())
+						allColliders.at(j)->SendCollisionMessage(*allColliders.at(i));
 				}
 			}
 		}
@@ -34,7 +37,6 @@ void CollisionManager::ColliderWasDestroyed(RectangleCollider* destroyed)
 	{
 		if (allColliders.at(i) == destroyed)
 		{
-			std::cout << "erased" << std::endl;
 			allColliders.erase(allColliders.begin() + i);
 		}
 	}

@@ -12,12 +12,13 @@ public:
 
 	virtual void Update(float deltaTime) override;
 	void SetText(const std::string& message);
+	void SetTextSize(int size);
 
 private:
 	sf::Text text;
 	sf::Font font;
 
 	void UpdateTextPosition();
-
+	void SetPivotToMiddle();
 };
 

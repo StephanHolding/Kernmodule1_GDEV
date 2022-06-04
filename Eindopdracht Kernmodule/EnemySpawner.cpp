@@ -32,7 +32,6 @@ float EnemySpawner::GetNewWaitTime()
 {
 	const int waitTimeInMilliseconds = rand() % waitTimeMax + waitTimeMin;
 	const float toReturn = static_cast<float>(waitTimeInMilliseconds) / 1000;
-	std::cout << toReturn << std::endl;
 	return toReturn;
 }
 

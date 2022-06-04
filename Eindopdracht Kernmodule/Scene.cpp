@@ -37,6 +37,16 @@ void Scene::DestroyObject(Object* toDestroy)
 	}
 }
 
+void Scene::DestroyAllObjects()
+{
+	for (int i = 0; i < allObjects.size(); i++)
+	{
+		delete allObjects.at(i);
+	}
+
+	allObjects.clear();
+}
+
 void Scene::RenderAllObjects()
 {
 	for (int i = 0; i < allObjects.size(); i++)

@@ -4,12 +4,12 @@
 
 NPC::NPC(std::string objectName, const CustomVector2& position) : Object(objectName, position)
 {
-	std::cout << "constructor called 1" << std::endl;
+
 }
 
 NPC::~NPC()
 {
-	std::cout << "destructor called 1" << std::endl;
+
 }
 
 void NPC::Update(float deltaTime)

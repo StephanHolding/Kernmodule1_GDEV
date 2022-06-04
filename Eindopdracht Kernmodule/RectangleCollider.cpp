@@ -4,7 +4,6 @@
 
 RectangleCollider::RectangleCollider(Object* owner, const Rect& rect)
 {
-	std::cout << "constructor called 2" << std::endl;
 	this->rect = rect;
 	this->owner = owner;
 	CollisionManager::ColliderWasCreated(this);
@@ -12,7 +11,6 @@ RectangleCollider::RectangleCollider(Object* owner, const Rect& rect)
 
 RectangleCollider::~RectangleCollider()
 {
-	std::cout << "destructor called 2" << std::endl;
 	CollisionManager::ColliderWasDestroyed(this);
 }
 

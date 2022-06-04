@@ -11,9 +11,11 @@ public:
 
 private:
 	static int currentScore;
+	static int scoreNeededForWin;
 	static TextObject* textObject;
 	
 	static void ShowOnScreen();
+	static void CheckforWin();
 
 };
 

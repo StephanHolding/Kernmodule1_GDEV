@@ -16,8 +16,8 @@ private:
 	float GetNewWaitTime();
 	int GetRandomSpawnPosition();
 
-	const int waitTimeMin = 200; //in milliseconds
-	const int waitTimeMax = 800; //in milliseconds
+	const int waitTimeMin = 50; //in milliseconds
+	const int waitTimeMax = 200; //in milliseconds
 	int spawnAreaXMin = 0;
 	int spawnAreaXMax = 0;
 	const int spawnPositionY = -200;

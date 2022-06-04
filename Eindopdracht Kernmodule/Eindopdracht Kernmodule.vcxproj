@@ -151,6 +151,7 @@
     <ClCompile Include="CustomVector2.cpp" />
     <ClCompile Include="Deathzone.cpp" />
     <ClCompile Include="Eindopdracht Kernmodule.cpp" />
+    <ClCompile Include="EndScreen.cpp" />
     <ClCompile Include="EnemySpawner.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Object.cpp" />
@@ -167,6 +168,7 @@
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="CustomVector2.h" />
     <ClInclude Include="Deathzone.h" />
+    <ClInclude Include="EndScreen.h" />
     <ClInclude Include="EnemySpawner.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Object.h" />
