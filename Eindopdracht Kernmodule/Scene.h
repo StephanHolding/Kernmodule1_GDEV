@@ -14,16 +14,20 @@ public:
 
 
 	static std::vector<Object*> allObjects;
+	static CustomVector2 GetWindowSize();
 	static void DrawOnWindow(const sf::Drawable& drawable);
 
 	template <typename T>
 	static T* SpawnObject(std::string objectName, CustomVector2 position)
 	{
 		T* toReturn = new T(objectName, position);
-		//toReturn->SetRotation(rotation);
 		allObjects.push_back(toReturn);
+
 		return toReturn;
 	}
+
+	static void DestroyObject(Object* toDestroy);
+
 
 	void RenderAllObjects();
 	void CallUpdates();

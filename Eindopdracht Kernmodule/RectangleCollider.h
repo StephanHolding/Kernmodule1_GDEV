@@ -7,6 +7,7 @@ class RectangleCollider
 
 public:
 	RectangleCollider(Object* owner, const Rect& rect);
+	~RectangleCollider();
 
 	Object* owner = nullptr;
 

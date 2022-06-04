@@ -1,4 +1,21 @@
-﻿  Eindopdracht Kernmodule.cpp
-C:\Users\Stephan\Documents\HKU\KernModule\Eindopdracht Kernmodule\ScoreManager.h(18,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
-C:\Users\Stephan\Documents\HKU\KernModule\Eindopdracht Kernmodule\CollisionManager.h(17,2): warning C4091: 'static ': ignored on left of 'CollisionManager' when no variable is declared
-  Eindopdracht Kernmodule.vcxproj -> C:\Users\Stephan\Documents\HKU\KernModule\Eindopdracht Kernmodule\x64\Debug\Eindopdracht Kernmodule.exe
+﻿  NPC.cpp
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\ScoreManager.h(18,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\NPC.cpp(32,65): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\NPC.cpp(32,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  Object.cpp
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Object.cpp(18,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Object.cpp(18,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Object.cpp(42,99): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Object.cpp(42,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  RectangleCollider.cpp
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\CollisionManager.h(18,2): warning C4091: 'static ': ignored on left of 'CollisionManager' when no variable is declared
+  Generating Code...
+  Eindopdracht Kernmodule.vcxproj -> C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\x64\Debug\Eindopdracht Kernmodule.exe

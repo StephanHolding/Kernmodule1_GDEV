@@ -4,3 +4,8 @@ Deathzone::Deathzone(std::string objectName, const CustomVector2& position) : Ob
 {
 	collider.UpdatePosition(position.x, position.y);
 }
+
+void Deathzone::SetColliderSize(const CustomVector2& newSize)
+{
+	collider.SetColliderSize(newSize.x, newSize.y);
+}

@@ -28,6 +28,18 @@ void CollisionManager::ColliderWasCreated(RectangleCollider* collider)
 	allColliders.push_back(collider);
 }
 
+void CollisionManager::ColliderWasDestroyed(RectangleCollider* destroyed)
+{
+	for (int i = 0; i < allColliders.size(); i++)
+	{
+		if (allColliders.at(i) == destroyed)
+		{
+			std::cout << "erased" << std::endl;
+			allColliders.erase(allColliders.begin() + i);
+		}
+	}
+}
+
 void CollisionManager::Debug(const Rect& one, const Rect& two)
 {
 	sf::RectangleShape debugOne = sf::RectangleShape(sf::Vector2f(one.width, one.height));

@@ -15,6 +15,7 @@ public:
 	bool transformationChanged;
 
 	Object(std::string objectName, const CustomVector2& position);
+	virtual ~Object();
 
 	virtual void Start();
 	virtual void Update(float deltaTime);

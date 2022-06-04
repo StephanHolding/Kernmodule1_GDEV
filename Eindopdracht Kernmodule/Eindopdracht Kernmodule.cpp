@@ -8,6 +8,7 @@
 #include "CustomVector2.h"
 #include "Deathzone.h"
 #include "ScoreManager.h"
+#include "EnemySpawner.h"
 #include "CollisionManager.h"
 
 int main()
@@ -16,13 +17,13 @@ int main()
 
 	Scene scene(&window);
 
-	Player* player = Scene::SpawnObject<Player>("Player", CustomVector2(500, 700));
+	Player* player = Scene::SpawnObject<Player>("Player", CustomVector2(500, 600));
 	player->LoadSprite("sprites/player.png");
 
-	NPC* npc = Scene::SpawnObject<NPC>("NPC", CustomVector2(500, 200));
-	npc->LoadSprite("sprites/player.png");
+	Deathzone* deathZone = Scene::SpawnObject<Deathzone>("DeathZone", CustomVector2(0, 1100));
+	deathZone->SetColliderSize(CustomVector2(1500, 100));
 
-	Deathzone* deathZone = Scene::SpawnObject<Deathzone>("DeathZone", CustomVector2(0, 810));
+	EnemySpawner* enemySpawner = Scene::SpawnObject<EnemySpawner>("Enemy Spawner", CustomVector2());
 
 	ScoreManager::SetScore(0);
 

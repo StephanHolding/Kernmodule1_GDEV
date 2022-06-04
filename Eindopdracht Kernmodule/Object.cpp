@@ -8,6 +8,11 @@ Object::Object(std::string objectName, const CustomVector2& position)
 	this->transformationChanged = true;
 }
 
+Object::~Object()
+{
+
+}
+
 void Object::SetPosition(int newPositionX, int newPositionY)
 {
 	position = CustomVector2(newPositionX, newPositionY);
