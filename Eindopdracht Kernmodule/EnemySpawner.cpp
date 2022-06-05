@@ -1,6 +1,7 @@
 #include "EnemySpawner.h"
 #include "Scene.h"
 #include "NPC.h"
+#include "StartLights.h"
 
 EnemySpawner::EnemySpawner(std::string objectName, const CustomVector2& position) : Object(objectName, position)
 {
@@ -11,6 +12,8 @@ EnemySpawner::EnemySpawner(std::string objectName, const CustomVector2& position
 
 void EnemySpawner::Update(float deltaTime)
 {
+	if (!StartLights::startLightsFinished) return;
+
 	timer += deltaTime;
 
 	if (timer >= waitTime)
@@ -25,7 +28,12 @@ void EnemySpawner::SpawnEnemy(const CustomVector2& position)
 {
 	std::string enemyName = "Enemy " + std::to_string(position.x);
 	NPC* npcPtr = Scene::SpawnObject<NPC>(enemyName, position);
-	npcPtr->LoadSprite("sprites/player.png");
+	srand((unsigned int)time(NULL));
+	int spriteRandomize = rand() % 19 + 1;
+	npcPtr->LoadSprite("sprites/pitstop_car_" + std::to_string(spriteRandomize) + ".png");
+	//npcPtr->LoadSprite("sprites/pitstop_car_5.png");
+	npcPtr->SetScale(0.25);
+	npcPtr->SetOriginToMiddle();
 }
 
 float EnemySpawner::GetNewWaitTime()

@@ -52,15 +52,8 @@ void Scene::RenderAllObjects()
 	for (int i = 0; i < allObjects.size(); i++)
 	{
 		Object* object = allObjects.at(i);
-
-		if (object->transformationChanged)
-		{
-			object->sprite.setPosition(object->position);
-			object->sprite.setRotation(object->rotation);
-		}
-
-		windowPtr->draw(object->sprite);
-		object->ObjectWasRenderedThisFrame();
+		if (object->draw)
+			windowPtr->draw(object->GetDrawable());
 		object = nullptr;
 	}
 }

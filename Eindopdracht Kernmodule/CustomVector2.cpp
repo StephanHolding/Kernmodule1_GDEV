@@ -6,6 +6,12 @@ CustomVector2::CustomVector2()
 	this->y = 0;
 }
 
+CustomVector2::CustomVector2(float xy)
+{
+	this->x = xy;
+	this->y = xy;
+}
+
 CustomVector2::CustomVector2(float x, float y)
 {
 	this->x = x;

@@ -13,6 +13,7 @@ public:
 	virtual void Update(float deltaTime) override;
 	void SetText(const std::string& message);
 	void SetTextSize(int size);
+	virtual sf::Drawable& GetDrawable() override;
 
 private:
 	sf::Text text;

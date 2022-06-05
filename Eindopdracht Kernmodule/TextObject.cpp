@@ -28,6 +28,11 @@ void TextObject::SetTextSize(int size)
 	text.setCharacterSize(size);
 }
 
+sf::Drawable& TextObject::GetDrawable()
+{
+	return text;
+}
+
 void TextObject::UpdateTextPosition()
 {
 	text.setPosition(position.x, position.y);

@@ -3,9 +3,10 @@
 Object::Object(std::string objectName, const CustomVector2& position)
 {
 	this->objectName = objectName;
-	this->rotation = 0;
-	this->position = position;
-	this->transformationChanged = true;
+	SetRotation(0);
+	SetPosition(position);
+	SetScale(1);
+	this->draw = true;
 }
 
 Object::~Object()
@@ -16,24 +17,20 @@ Object::~Object()
 void Object::SetPosition(int newPositionX, int newPositionY)
 {
 	position = CustomVector2(newPositionX, newPositionY);
-	transformationChanged = true;
+	sprite.setPosition(position);
 }
 
 void Object::SetPosition(const CustomVector2& newPosition)
 {
 	position = newPosition;
-	transformationChanged = true;
+	sprite.setPosition(position);
 }
 
-void Object::SetRotation(float newRotation)
+void Object::SetScale(const float newScale)
 {
-	rotation = newRotation;
-	transformationChanged = true;
-}
-
-void Object::ObjectWasRenderedThisFrame()
-{
-	transformationChanged = false;
+	scale = newScale;
+	sprite.setScale(CustomVector2(scale));
+	OnSpriteScaleUpdated();
 }
 
 void Object::SetOriginToMiddle()
@@ -42,7 +39,18 @@ void Object::SetOriginToMiddle()
 	sprite.setOrigin(CustomVector2(sprite.getTextureRect().width / 2, sprite.getTextureRect().height / 2));
 }
 
-void Object::SpriteWasLoaded()
+void Object::SetOriginToUpperLeft()
+{
+	if (sprite.getTexture() == NULL) return;
+	sprite.setOrigin(CustomVector2());
+}
+
+sf::Drawable& Object::GetDrawable()
+{
+	return sprite;
+}
+
+void Object::OnSpriteScaleUpdated()
 {
 }
 
@@ -54,6 +62,12 @@ void Object::OnColliderOverlap(const Object& other)
 void Object::Translate(const CustomVector2& translation)
 {
 	SetPosition(CustomVector2(position.x + translation.x, position.y + translation.y));
+}
+
+void Object::SetRotation(float newRotation)
+{
+	rotation = newRotation;
+	sprite.setRotation(rotation);
 }
 
 void Object::Start()
@@ -78,7 +92,10 @@ void Object::LoadSprite(std::string path)
 		
 		sprite = s;
 
-		//SetOriginToMiddle();
-		SpriteWasLoaded();
+		sprite.setPosition(position);
+		sprite.setRotation(rotation);
+		sprite.setScale(CustomVector2(scale));
+
+		OnSpriteScaleUpdated();
 	}
 }

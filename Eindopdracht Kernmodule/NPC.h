@@ -13,10 +13,10 @@ public:
 	virtual void OnColliderOverlap(const Object& other);
 
 protected:
-	virtual void SpriteWasLoaded() override;
+	virtual void OnSpriteScaleUpdated() override;
 	
 private:
-	float movementSpeed = 1250;
+	float movementSpeed = 1200;
 
 	RectangleCollider collider = RectangleCollider(this, Rect(position.x, position.y, 0, 0));
 

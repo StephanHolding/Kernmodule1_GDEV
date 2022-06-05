@@ -7,6 +7,7 @@ class CustomVector2
 public:
 
 	CustomVector2();
+	CustomVector2(float xy);
 	CustomVector2(float x, float y);
 	CustomVector2(const CustomVector2& original);
 	//~CustomVector2();

@@ -2,15 +2,16 @@
 #include "CustomVector2.h"
 #include "EndScreen.h"
 #include "Scene.h"
+#include "StartLights.h"
 
 Player::Player(std::string objectName, const CustomVector2& position) : Object(objectName, position)
 {
 
 }
 
-void Player::SpriteWasLoaded()
+void Player::OnSpriteScaleUpdated()
 {
-	collider.SetColliderSize(texture.getSize().x, texture.getSize().y);
+	collider.SetColliderSize(texture.getSize().x * scale, texture.getSize().y * scale);
 }
 
 void Player::OnColliderOverlap(const Object& other)
@@ -53,7 +54,7 @@ bool Player::CanMove(float translationX, float deltaTime)
 
 	if (translationX > 0)
 	{
-		if (position.x + texture.getSize().x + translationX * movementSpeed * deltaTime < windowSize.x)
+		if (position.x + texture.getSize().x * scale + translationX * movementSpeed * deltaTime < windowSize.x)
 		{
 			return true;
 		}
@@ -71,6 +72,8 @@ bool Player::CanMove(float translationX, float deltaTime)
 
 void Player::Update(float deltaTime)
 {
+	if (!StartLights::startLightsFinished) return;
+
 	MovementInput(deltaTime);
 	ColliderPositionUpdate();
 }

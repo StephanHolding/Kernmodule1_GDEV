@@ -26,6 +26,15 @@ public:
 		return toReturn;
 	}
 
+	template <typename T>
+	static T* SpawnObject(std::string objectName, CustomVector2 position, int renderingOrder)
+	{
+		T* toReturn = new T(objectName, position);
+		allObjects.insert(allObjects.begin() + renderingOrder, toReturn);
+
+		return toReturn;
+	}
+
 	static void DestroyObject(Object* toDestroy);
 	static void DestroyAllObjects();
 

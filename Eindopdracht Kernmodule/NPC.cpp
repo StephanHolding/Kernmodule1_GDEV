@@ -27,9 +27,9 @@ void NPC::OnColliderOverlap(const Object& other)
 	}
 }
 
-void NPC::SpriteWasLoaded()
+void NPC::OnSpriteScaleUpdated()
 {
-	collider.SetColliderSize(texture.getSize().x, texture.getSize().y);
+	collider.SetColliderSize(texture.getSize().x * scale, texture.getSize().y * scale);
 }
 
 void NPC::Move(float translationY, float deltaTime)
