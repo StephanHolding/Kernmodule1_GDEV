@@ -8,6 +8,7 @@ public:
 	static void IncreaseScore(int increaseBy);
 	static void DecreaseScore(int decreaseBy);
 	static void SetScore(int newScore);
+	static int GetScore();
 
 private:
 	static int currentScore;

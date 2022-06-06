@@ -34,6 +34,11 @@ void ScoreManager::SetScore(int newScore)
 	ShowOnScreen();
 }
 
+int ScoreManager::GetScore()
+{
+	return currentScore;
+}
+
 int ScoreManager::currentScore = 0;
 int ScoreManager::scoreNeededForWin = 100;
 TextObject* ScoreManager::textObject = Scene::SpawnObject<TextObject>("Text Object", CustomVector2(60, 40));

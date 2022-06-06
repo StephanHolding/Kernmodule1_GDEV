@@ -3,9 +3,9 @@
 StartLights::StartLights(std::string objectName, const CustomVector2& position) : Object(objectName, position)
 {
 	stages.push_back(Stage(0, "sprites/lights_0.png"));
-	stages.push_back(Stage(1, "sprites/lights_1.png"));
+	stages.push_back(Stage(0.8, "sprites/lights_1.png"));
 	stages.push_back(Stage(1.4, "sprites/lights_2.png"));
-	stages.push_back(Stage(1.4, "sprites/lights_3.png"));
+	stages.push_back(Stage(1.6, "sprites/lights_3.png"));
 	stages.push_back(Stage(1.5, "sprites/lights_4.png"));
 	stages.push_back(Stage(1.7, "null"));
 }

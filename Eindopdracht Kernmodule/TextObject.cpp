@@ -8,6 +8,7 @@ TextObject::TextObject(std::string objectName, const CustomVector2& position) : 
 	text.setFont(font);
 	text.setCharacterSize(100);
 	text.setFillColor(sf::Color::White);
+	text.setOutlineThickness(2);
 	std::cout << "called" << std::endl;
 }
 

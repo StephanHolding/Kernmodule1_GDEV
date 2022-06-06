@@ -29,12 +29,36 @@ void Player::MovementInput(float deltaTime)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
 		if (CanMove(-1, deltaTime))
+		{
+			if (rotation != 175)
+			{
+				SetRotation(175);
+			}
+
 			Move(-1, deltaTime);
+			return;
+		}
+
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
 		if (CanMove(1, deltaTime))
+		{
+			if (rotation != 185)
+			{
+				SetRotation(185);
+			}
+
 			Move(1, deltaTime);
+			return;
+		}
+	}
+	else
+	{
+		if (rotation != 180)
+		{
+			SetRotation(180);
+		}
 	}
 }
 
@@ -54,14 +78,14 @@ bool Player::CanMove(float translationX, float deltaTime)
 
 	if (translationX > 0)
 	{
-		if (position.x + texture.getSize().x * scale + translationX * movementSpeed * deltaTime < windowSize.x)
+		if ((position.x + static_cast<float>(texture.getSize().x) / 2 * scale) + translationX * movementSpeed * deltaTime < windowSize.x)
 		{
 			return true;
 		}
 	}
 	else if (translationX < 0)
 	{
-		if (position.x + translationX * movementSpeed * deltaTime > 0)
+		if ((position.x - static_cast<float>(texture.getSize().x) / 2 * scale) + translationX * movementSpeed * deltaTime > 0)
 		{
 			return true;
 		}

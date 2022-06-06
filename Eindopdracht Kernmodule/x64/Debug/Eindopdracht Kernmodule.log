@@ -1,6 +1,4 @@
-﻿  EnemySpawner.cpp
+﻿  Player.cpp
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\EndScreen.h(14,2): warning C4091: 'static ': ignored on left of 'EndScreen' when no variable is declared
 C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\StartLights.h(14,18): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\EnemySpawner.cpp(9,37): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\EnemySpawner.cpp(21,54): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\EnemySpawner.cpp(21,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Eindopdracht Kernmodule.vcxproj -> C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\x64\Debug\Eindopdracht Kernmodule.exe
