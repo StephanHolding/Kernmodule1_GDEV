@@ -25,7 +25,6 @@ public:
 	void SetPosition(int newPositionX, int newPositionY);
 	void SetPosition(const CustomVector2& newPosition);
 	void SetScale(const float newScale);
-	void Translate(const CustomVector2& translation);
 	void SetRotation(float newRotation);
 	virtual void OnColliderOverlap(const Object& other);
 	void SetOriginToMiddle();

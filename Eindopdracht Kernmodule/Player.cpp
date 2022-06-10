@@ -4,7 +4,7 @@
 #include "Scene.h"
 #include "StartLights.h"
 
-Player::Player(std::string objectName, const CustomVector2& position) : Object(objectName, position)
+Player::Player(std::string objectName, const CustomVector2& position) : MoveableObject(objectName, position)
 {
 
 }
@@ -28,28 +28,41 @@ void Player::MovementInput(float deltaTime)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		if (CanMove(-1, deltaTime))
+		if (WillStayInScreen(velocity * deltaTime))
 		{
+			AddForce(CustomVector2(-7000 * deltaTime, 0));
+			velocity.Clamp(CustomVector2(-1000, 0), CustomVector2(1000, 0));
+
 			if (rotation != 175)
 			{
 				SetRotation(175);
 			}
 
-			Move(-1, deltaTime);
+			return;
+		}
+		else
+		{
+			velocity = CustomVector2(0, 0);
 			return;
 		}
 
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
-		if (CanMove(1, deltaTime))
+		if (WillStayInScreen(velocity * deltaTime))
 		{
+			AddForce(CustomVector2(7000 * deltaTime, 0));
+			velocity.Clamp(CustomVector2(-1000, 0), CustomVector2(1000, 0));
+
 			if (rotation != 185)
 			{
 				SetRotation(185);
 			}
-
-			Move(1, deltaTime);
+			return;
+		}
+		else
+		{
+			velocity = CustomVector2(0, 0);
 			return;
 		}
 	}
@@ -62,42 +75,21 @@ void Player::MovementInput(float deltaTime)
 	}
 }
 
-void Player::Move(float translationX, float deltaTime)
-{
-	Translate(CustomVector2(translationX, 0) * movementSpeed * deltaTime);
-}
-
 void Player::ColliderPositionUpdate()
 {
 	collider.UpdatePosition(position.x, position.y);
-}
-
-bool Player::CanMove(float translationX, float deltaTime)
-{
-	CustomVector2 windowSize = Scene::GetWindowSize();
-
-	if (translationX > 0)
-	{
-		if ((position.x + static_cast<float>(texture.getSize().x) / 2 * scale) + translationX * movementSpeed * deltaTime < windowSize.x)
-		{
-			return true;
-		}
-	}
-	else if (translationX < 0)
-	{
-		if ((position.x - static_cast<float>(texture.getSize().x) / 2 * scale) + translationX * movementSpeed * deltaTime > 0)
-		{
-			return true;
-		}
-	}
-
-	return false;
 }
 
 void Player::Update(float deltaTime)
 {
 	if (!StartLights::startLightsFinished) return;
 
+	MoveableObject::Update(deltaTime);
+
 	MovementInput(deltaTime);
+
+	if (WillStayInScreen(velocity * deltaTime))
+		Translate(velocity * deltaTime);
+
 	ColliderPositionUpdate();
 }

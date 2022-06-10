@@ -2,7 +2,7 @@
 #include "Scene.h"
 #include "ScoreManager.h"
 
-NPC::NPC(std::string objectName, const CustomVector2& position) : Object(objectName, position)
+NPC::NPC(std::string objectName, const CustomVector2& position) : MoveableObject(objectName, position)
 {
 
 }
@@ -14,8 +14,13 @@ NPC::~NPC()
 
 void NPC::Update(float deltaTime)
 {
+	MoveableObject::Update(deltaTime);
+
+	AddForce(CustomVector2(0, 1000));
+	velocity.Clamp(CustomVector2(0, 0), CustomVector2(0, 1000));
+
 	collider.UpdatePosition(position.x, position.y);
-	Move(1, deltaTime);
+	Translate(velocity * deltaTime);
 }
 
 void NPC::OnColliderOverlap(const Object& other)
@@ -30,11 +35,6 @@ void NPC::OnColliderOverlap(const Object& other)
 void NPC::OnSpriteScaleUpdated()
 {
 	collider.SetColliderSize(texture.getSize().x * scale, texture.getSize().y * scale);
-}
-
-void NPC::Move(float translationY, float deltaTime)
-{
-	Translate(CustomVector2(0, translationY) * movementSpeed * deltaTime);
 }
 
 

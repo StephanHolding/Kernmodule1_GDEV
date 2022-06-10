@@ -58,12 +58,6 @@ void Object::OnColliderOverlap(const Object& other)
 {
 }
 
-
-void Object::Translate(const CustomVector2& translation)
-{
-	SetPosition(CustomVector2(position.x + translation.x, position.y + translation.y));
-}
-
 void Object::SetRotation(float newRotation)
 {
 	rotation = newRotation;
