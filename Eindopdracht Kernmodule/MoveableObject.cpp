@@ -63,7 +63,4 @@ void MoveableObject::ApplyFriction(float deltaTime)
 		velocity -= CustomVector2(0, velocity.y * deltaTime);
 		velocity.Clamp(CustomVector2(-9999, 0), CustomVector2(9999, 9999));
 	}
-
-	std::cout << velocity.x << std::endl;
-
 }

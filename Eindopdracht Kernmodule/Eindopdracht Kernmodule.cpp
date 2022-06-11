@@ -22,7 +22,7 @@ int main()
 	Player* player = Scene::SpawnObject<Player>("Player", CustomVector2(600, 650));
 	player->LoadSprite("sprites/player.png");
 	player->SetOriginToMiddle();
-	player->SetScale(0.3);
+	player->SetScale(0.275);
 	player->SetRotation(180);
 
 	Deathzone* deathZone = Scene::SpawnObject<Deathzone>("DeathZone", CustomVector2(0, 1300));

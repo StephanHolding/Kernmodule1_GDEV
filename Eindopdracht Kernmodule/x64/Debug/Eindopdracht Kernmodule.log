@@ -2,11 +2,5 @@
 C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\ScoreManager.h(21,2): warning C4091: 'static ': ignored on left of 'ScoreManager' when no variable is declared
 C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\StartLights.h(14,18): warning C4305: 'initializing': truncation from 'double' to 'float'
 C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\CollisionManager.h(18,2): warning C4091: 'static ': ignored on left of 'CollisionManager' when no variable is declared
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Eindopdracht Kernmodule.cpp(25,22): warning C4305: 'argument': truncation from 'double' to 'const float'
-  ScrollingBackground.cpp
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\StartLights.h(14,18): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\ScrollingBackground.cpp(42,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\ScrollingBackground.cpp(43,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\ScrollingBackground.cpp(55,41): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
+C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\Eindopdracht Kernmodule.cpp(25,24): warning C4305: 'argument': truncation from 'double' to 'const float'
   Eindopdracht Kernmodule.vcxproj -> C:\Users\Stephan\Documents\HKU\KernModule\Kernmodule1_GDEV\Eindopdracht Kernmodule\x64\Debug\Eindopdracht Kernmodule.exe
