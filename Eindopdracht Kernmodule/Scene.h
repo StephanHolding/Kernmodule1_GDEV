@@ -18,6 +18,21 @@ public:
 	static void DrawOnWindow(const sf::Drawable& drawable);
 
 	template <typename T>
+	static T* FindObjectByName(const std::string& objectName)
+	{
+		for (int i = 0; i < allObjects.size(); i++)
+		{
+			if (allObjects.at(i)->objectName == objectName)
+			{
+				Object* toReturn = allObjects.at(i);
+				return static_cast<T*>(toReturn);
+			}
+		}
+
+		return nullptr;
+	}
+
+	template <typename T>
 	static T* SpawnObject(std::string objectName, CustomVector2 position)
 	{
 		T* toReturn = new T(objectName, position);

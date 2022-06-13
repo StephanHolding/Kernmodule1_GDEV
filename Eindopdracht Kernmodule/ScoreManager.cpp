@@ -17,7 +17,10 @@ void ScoreManager::DecreaseScore(int decreaseBy)
 
 void ScoreManager::ShowOnScreen()
 {
-	textObject->SetText(std::to_string(currentScore));
+	if (FindScoreText())
+	{
+		textObject->SetText(std::to_string(currentScore));
+	}
 }
 
 void ScoreManager::CheckforWin()
@@ -26,6 +29,15 @@ void ScoreManager::CheckforWin()
 	{
 		EndScreen::PlayerWon();
 	}
+}
+
+bool ScoreManager::FindScoreText()
+{
+	if (textObject != nullptr) return true;
+
+	textObject = Scene::FindObjectByName<TextObject>("ScoreText");
+
+	return textObject != nullptr;
 }
 
 void ScoreManager::SetScore(int newScore)
@@ -39,6 +51,12 @@ int ScoreManager::GetScore()
 	return currentScore;
 }
 
+void ScoreManager::Reset()
+{
+	currentScore = 0;
+	textObject = nullptr;
+}
+
 int ScoreManager::currentScore = 0;
 int ScoreManager::scoreNeededForWin = 100;
-TextObject* ScoreManager::textObject = Scene::SpawnObject<TextObject>("Text Object", CustomVector2(60, 40));
+TextObject* ScoreManager::textObject = nullptr;

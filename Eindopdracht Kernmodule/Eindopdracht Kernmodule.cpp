@@ -13,12 +13,10 @@
 #include "ScrollingBackground.h"
 #include "CollisionManager.h"
 
-int main()
+bool restartKeyWasPressedLastFrame;
+
+void StartGame()
 {
-	sf::RenderWindow window(sf::VideoMode(1200, 800), "Eindopdracht Kernmodule DEV");
-
-	Scene scene(&window);
-
 	Player* player = Scene::SpawnObject<Player>("Player", CustomVector2(600, 650));
 	player->LoadSprite("sprites/player.png");
 	player->SetOriginToMiddle();
@@ -30,6 +28,8 @@ int main()
 
 	EnemySpawner* enemySpawner = Scene::SpawnObject<EnemySpawner>("Enemy Spawner", CustomVector2());
 
+	TextObject* scoreText = Scene::SpawnObject<TextObject>("ScoreText", CustomVector2(60, 40));
+
 	ScoreManager::SetScore(0);
 
 	ScrollingBackground* scrollingBackground = Scene::SpawnObject<ScrollingBackground>("scrolling background", CustomVector2());
@@ -39,6 +39,24 @@ int main()
 	startLights->SetScale(0.75);
 	startLights->BeginStartLights();
 
+	//All these pointers go out of scope, but thats okay, the scene keeps track of all spawned objects.
+}
+
+void RestartGame()
+{
+	Scene::DestroyAllObjects();
+	ScoreManager::Reset();
+	StartGame();
+}
+
+int main()
+{
+	sf::RenderWindow window(sf::VideoMode(1200, 800), "Eindopdracht Kernmodule DEV");
+
+	Scene scene(&window);
+
+	StartGame();
+
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -46,6 +64,20 @@ int main()
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
+		{
+			if (!restartKeyWasPressedLastFrame)
+			{
+				RestartGame();
+			}
+
+			restartKeyWasPressedLastFrame = true;
+		}
+		else
+		{
+			restartKeyWasPressedLastFrame = false;
 		}
 
 		window.clear();
@@ -59,3 +91,4 @@ int main()
 
 	return 0;
 }
+

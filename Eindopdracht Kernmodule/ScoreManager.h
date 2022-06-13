@@ -9,6 +9,7 @@ public:
 	static void DecreaseScore(int decreaseBy);
 	static void SetScore(int newScore);
 	static int GetScore();
+	static void Reset();
 
 private:
 	static int currentScore;
@@ -17,6 +18,6 @@ private:
 	
 	static void ShowOnScreen();
 	static void CheckforWin();
-
+	static bool FindScoreText();
 };
 

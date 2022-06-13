@@ -8,6 +8,7 @@ StartLights::StartLights(std::string objectName, const CustomVector2& position) 
 	stages.push_back(Stage(1.6, "sprites/lights_3.png"));
 	stages.push_back(Stage(1.5, "sprites/lights_4.png"));
 	stages.push_back(Stage(1.5, "null"));
+	startLightsFinished = false;
 }
 
 void StartLights::BeginStartLights()
