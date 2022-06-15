@@ -4,7 +4,8 @@
 #include "Scene.h"
 #include "StartLights.h"
 
-Player::Player(std::string objectName, const CustomVector2& position) : MoveableObject(objectName, position)
+Player::Player(const std::string& objectName, const CustomVector2& position) : MoveableObject(objectName, position),
+collider(this, Rect(position.x, position.y, 0, 0))
 {
 
 }

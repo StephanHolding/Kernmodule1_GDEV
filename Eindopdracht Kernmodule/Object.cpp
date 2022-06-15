@@ -1,6 +1,6 @@
 #include "Object.h"
 
-Object::Object(std::string objectName, const CustomVector2& position)
+Object::Object(const std::string& objectName, const CustomVector2& position)
 {
 	this->objectName = objectName;
 	SetRotation(0);
@@ -74,7 +74,7 @@ void Object::Update(float deltaTime)
 
 }
 
-void Object::LoadSprite(std::string path)
+void Object::LoadSprite(const std::string& path)
 {
 	sf::Texture t;
 	if (t.loadFromFile(path))

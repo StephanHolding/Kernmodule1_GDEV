@@ -3,7 +3,7 @@
 #include "NPC.h"
 #include "StartLights.h"
 
-EnemySpawner::EnemySpawner(std::string objectName, const CustomVector2& position) : Object(objectName, position)
+EnemySpawner::EnemySpawner(const std::string& objectName, const CustomVector2& position) : Object(objectName, position)
 {
 	CustomVector2 windowSize = Scene::GetWindowSize();
 	this->spawnAreaXMax = windowSize.x - 100;

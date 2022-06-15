@@ -1,7 +1,7 @@
 #include "MoveableObject.h"
 #include "Scene.h"
 
-MoveableObject::MoveableObject(std::string objectName, const CustomVector2& position) : Object(objectName, position),
+MoveableObject::MoveableObject(const std::string& objectName, const CustomVector2& position) : Object(objectName, position),
 friction(1500, 1500)
 {
 

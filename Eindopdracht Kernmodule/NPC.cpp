@@ -2,7 +2,8 @@
 #include "Scene.h"
 #include "ScoreManager.h"
 
-NPC::NPC(std::string objectName, const CustomVector2& position) : MoveableObject(objectName, position)
+NPC::NPC(const std::string& objectName, const CustomVector2& position) : MoveableObject(objectName, position),
+collider(this, Rect(position.x, position.y, 0, 0))
 {
 
 }

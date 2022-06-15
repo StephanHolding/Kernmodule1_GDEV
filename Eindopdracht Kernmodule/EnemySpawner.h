@@ -6,7 +6,7 @@ class EnemySpawner : public Object
 {
 
 public:
-	EnemySpawner(std::string objectName, const CustomVector2& position);
+	EnemySpawner(const std::string& objectName, const CustomVector2& position);
 
 	virtual void Update(float deltaTime) override;
 

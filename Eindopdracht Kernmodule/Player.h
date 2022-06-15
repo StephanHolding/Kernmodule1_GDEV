@@ -6,7 +6,7 @@ class Player : public MoveableObject
 {
 
 public:
-	Player(std::string objectName, const CustomVector2& position);
+	Player(const std::string& objectName, const CustomVector2& position);
 
 	virtual void OnColliderOverlap(const Object& other) override;
 	
@@ -15,8 +15,7 @@ protected:
 
 private:
 
-	//RectangleCollider* collider = new RectangleCollider(Rect(position.x, position.y, texture.getSize().x, texture.getSize().y));
-	RectangleCollider collider = RectangleCollider(this, Rect(position.x, position.y, 0, 0));
+	RectangleCollider collider;
 
 	void MovementInput(float deltaTime);
 	void ColliderPositionUpdate();

@@ -68,7 +68,7 @@ CustomVector2::operator sf::Vector2f()
 	return sf::Vector2f(this->x, this->y);
 }
 
-CustomVector2& CustomVector2::Clamp(const CustomVector2& min, const CustomVector2 max)
+CustomVector2& CustomVector2::Clamp(const CustomVector2& min, const CustomVector2& max)
 {
 	if (x < min.x)
 		x = min.x;

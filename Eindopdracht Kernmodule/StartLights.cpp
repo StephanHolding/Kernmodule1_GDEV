@@ -1,6 +1,6 @@
 #include "StartLights.h"
 
-StartLights::StartLights(std::string objectName, const CustomVector2& position) : Object(objectName, position)
+StartLights::StartLights(const std::string& objectName, const CustomVector2& position) : Object(objectName, position)
 {
 	stages.push_back(Stage(0, "sprites/lights_0.png"));
 	stages.push_back(Stage(0.8, "sprites/lights_1.png"));
@@ -45,7 +45,7 @@ void StartLights::Update(float deltaTime)
 
 bool StartLights::startLightsFinished = false;
 
-StartLights::Stage::Stage(float waitTime, std::string fileName)
+StartLights::Stage::Stage(float waitTime, const std::string& fileName)
 {
 	this->waitTime = waitTime;
 	this->fileName = fileName;

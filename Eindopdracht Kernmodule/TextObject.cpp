@@ -1,7 +1,7 @@
 #include "TextObject.h"
 #include "Scene.h"
 
-TextObject::TextObject(std::string objectName, const CustomVector2& position) : Object(objectName, position)
+TextObject::TextObject(const std::string& objectName, const CustomVector2& position) : Object(objectName, position)
 {
 	text = sf::Text();
 	if (!font.loadFromFile("fonts/ARIAL.TTF")) { std::cout << "failed to load font" << std::endl; }

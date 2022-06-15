@@ -20,7 +20,7 @@ public:
 	CustomVector2 operator*(const float scale);
 	operator sf::Vector2f();
 
-	CustomVector2& Clamp(const CustomVector2& min, const CustomVector2 max);
+	CustomVector2& Clamp(const CustomVector2& min, const CustomVector2& max);
 
 	float x;
 	float y;

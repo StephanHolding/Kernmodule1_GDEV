@@ -6,9 +6,9 @@ class Deathzone : public Object
 {
 
 public:
-	Deathzone(std::string objectName, const CustomVector2& position);
+	Deathzone(const std::string& objectName, const CustomVector2& position);
 
-	RectangleCollider collider = RectangleCollider(this, Rect(position.x, position.y, 100, 100));
+	RectangleCollider collider;
 
 	void SetColliderSize(const CustomVector2& newSize);
 };

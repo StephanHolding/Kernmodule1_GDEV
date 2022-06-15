@@ -2,10 +2,11 @@
 #include "StartLights.h"
 #include "Scene.h"
 
-ScrollingBackground::ScrollingBackground(std::string objectName, const CustomVector2& position) : Object(objectName, position)
+ScrollingBackground::ScrollingBackground(const std::string& objectName, const CustomVector2& position) : Object(objectName, position)
 {
 	bgs.push_back(Scene::SpawnObject<MoveableObject>("background one", CustomVector2(0, -Scene::GetWindowSize().y), 0));
 	bgs.push_back(Scene::SpawnObject<MoveableObject>("background two", CustomVector2(0, 0), 0));
+	bgs.push_back(Scene::SpawnObject<MoveableObject>("background three", CustomVector2(0, Scene::GetWindowSize().y), 0));
 
 	LoadSprites();
 }
@@ -16,14 +17,14 @@ void ScrollingBackground::Update(float deltaTime)
 
 	for (int i = 0; i < bgs.size(); i++)
 	{
-		if (WentFullyOutOfScreen(bgs.at(i)))
+		MoveableObject*& background = bgs.at(i);
+
+		if (WentFullyOutOfScreen(background))
 		{
-			ReturnToTop(bgs.at(i), FindHighestBackground());
+			ReturnToTop(background, FindHighestBackground());
 		}
-		else
-		{
-			Move(bgs.at(i), 1, deltaTime);
-		}
+
+		Move(background, 1, deltaTime);
 	}
 }
 

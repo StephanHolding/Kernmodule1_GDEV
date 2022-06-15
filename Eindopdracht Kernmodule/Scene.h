@@ -33,7 +33,7 @@ public:
 	}
 
 	template <typename T>
-	static T* SpawnObject(std::string objectName, CustomVector2 position)
+	static T* SpawnObject(const std::string& objectName, const CustomVector2& position)
 	{
 		T* toReturn = new T(objectName, position);
 		allObjects.push_back(toReturn);
@@ -42,7 +42,7 @@ public:
 	}
 
 	template <typename T>
-	static T* SpawnObject(std::string objectName, CustomVector2 position, int renderingOrder)
+	static T* SpawnObject(const std::string& objectName, const CustomVector2& position, int renderingOrder)
 	{
 		T* toReturn = new T(objectName, position);
 		allObjects.insert(allObjects.begin() + renderingOrder, toReturn);

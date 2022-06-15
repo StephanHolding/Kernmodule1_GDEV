@@ -5,7 +5,7 @@
 class ScrollingBackground : public Object
 {
 public:
-	ScrollingBackground(std::string objectName, const CustomVector2& position);
+	ScrollingBackground(const std::string& objectName, const CustomVector2& position);
 
 private:
 	float movementSpeed = 1000;

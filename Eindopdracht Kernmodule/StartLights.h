@@ -9,13 +9,13 @@ public:
 	class Stage
 	{
 	public:
-		Stage(float waitTime, std::string fileName);
+		Stage(float waitTime, const std::string& fileName);
 
 		float waitTime = 1.2;
 		std::string fileName;
 	};
 
-	StartLights(std::string objectName, const CustomVector2& position);
+	StartLights(const std::string& objectName, const CustomVector2& position);
 
 	static bool startLightsFinished;
 

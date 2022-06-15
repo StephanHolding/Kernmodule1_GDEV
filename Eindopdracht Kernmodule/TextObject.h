@@ -8,7 +8,7 @@ class TextObject : public Object
 {
 
 public:
-	TextObject(std::string objectName, const CustomVector2& position);
+	TextObject(const std::string& objectName, const CustomVector2& position);
 
 	virtual void Update(float deltaTime) override;
 	void SetText(const std::string& message);

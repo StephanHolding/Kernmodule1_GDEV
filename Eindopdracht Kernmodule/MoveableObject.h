@@ -4,7 +4,7 @@ class MoveableObject : public Object
 {
 public:
 
-	MoveableObject(std::string objectName, const CustomVector2& position);
+	MoveableObject(const std::string& objectName, const CustomVector2& position);
 
 	virtual void Update(float deltaTime) override;
 	void Translate(const CustomVector2& translation);
