@@ -34,6 +34,7 @@ void EnemySpawner::SpawnEnemy(const CustomVector2& position)
 	//npcPtr->LoadSprite("sprites/pitstop_car_5.png");
 	npcPtr->SetScale(0.25);
 	npcPtr->SetOriginToMiddle();
+	npcPtr->SetHorizontalMovement();
 }
 
 float EnemySpawner::GetNewWaitTime()

@@ -10,7 +10,6 @@ public:
 	CustomVector2(float xy);
 	CustomVector2(float x, float y);
 	CustomVector2(const CustomVector2& original);
-	//~CustomVector2();
 
 	CustomVector2& operator=(const CustomVector2& original);
 	CustomVector2 operator+(const CustomVector2& other);
@@ -24,6 +23,5 @@ public:
 
 	float x;
 	float y;
-
 };
 

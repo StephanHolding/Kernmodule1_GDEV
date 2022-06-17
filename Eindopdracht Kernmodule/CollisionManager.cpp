@@ -9,8 +9,6 @@ void CollisionManager::CheckCollision()
 	{
 		for (int j = 0; j < allColliders.size(); j++)
 		{
-			//Debug(allColliders.at(i)->rect, allColliders.at(j)->rect);
-
 			if (i != j)
 			{
 				if (allColliders.at(i)->HasCollision(*allColliders.at(j)))

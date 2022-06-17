@@ -11,11 +11,15 @@ public:
 
 	virtual void Update(float deltaTime) override;
 	virtual void OnColliderOverlap(const Object& other);
+	void SetHorizontalMovement();
 
 protected:
 	virtual void OnSpriteScaleUpdated() override;
 	
 private:
+	void ReverseHorizontalTranslation();
+
 	RectangleCollider collider;
+	float horizontalMovement;
 };
 
